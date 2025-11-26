@@ -51,6 +51,21 @@ function initializeNav() {
   })
 
   document.addEventListener('click', closeOnClickOutside);
+  // Highlight current page link
+  (function setActiveLink() {
+    const links = document.querySelectorAll('#nav-links a');
+    const path = window.location.pathname.replace(/\/$/, '');
+    links.forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+      const short = href.replace(/\//g, '').replace('.html', '');
+      if (path.endsWith(short) || (path === '' && href === 'index.html')) {
+        a.classList.add('active');
+      } else {
+        a.classList.remove('active');
+      }
+    });
+  })();
   // Close nav with Escape key for improved keyboard accessibility
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
