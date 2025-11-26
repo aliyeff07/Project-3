@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# Personal Portfolio — SITE 1101
 # Personal Portfolio — SITE 1101
 
 This is a starter personal portfolio website created for the SITE 1101 course.
@@ -31,4 +29,3 @@ Notes and tips
 
 Git & Deploy
 - See the git-steps.md for instructions on how to commit and deploy to GitHub Pages.
-# Project-3
