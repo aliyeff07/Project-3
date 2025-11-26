@@ -29,22 +29,36 @@ function initializeNav() {
   function closeOnClickOutside(e) {
     if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
       navLinks.classList.remove('show');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
     }
   }
 
   toggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('show');
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (isOpen) document.body.classList.add('nav-open');
+    else document.body.classList.remove('nav-open');
   });
 
   // Close menu on link click (mobile UX)
   navLinks.addEventListener('click', (event) => {
     if (event.target.matches('a')) {
       navLinks.classList.remove('show');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
     }
   })
 
   document.addEventListener('click', closeOnClickOutside);
+  // Close nav with Escape key for improved keyboard accessibility
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      navLinks.classList.remove('show');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }
+  });
 }
 
 function initializeFooter() {
