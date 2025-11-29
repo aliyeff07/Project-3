@@ -82,6 +82,15 @@ body {
 .project-screenshot { width: 100%; max-width: 100%; height: auto; margin-top: 0.6rem; border-radius: 6px; }
 .repo-link { color: var(--color-accent); text-decoration: underline; }
 
+/* Projects grid layout: 
+  - On larger screens, multiple columns will appear. This avoids large empty space by distributing cards.
+  - On narrow screens, the layout collapses to a single column — horizontal empty space is removed.
+  - Vertical spacing may remain to keep cards legible.
+*/
+.projects-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); align-items: start; }
+.project { display: flex; flex-direction: column; }
+.project-screenshot { height: auto; max-height: 360px; object-fit: cover; }
+
 .repo-note { margin-top: 0.5rem; color: var(--color-muted); font-size: 0.95rem; }
 
 /* FOOTER */
