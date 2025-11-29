@@ -27,5 +27,10 @@ Notes and tips
 - Replace placeholder images and text with your real content.
 - Keep the `assets/components/` folder for common partials you can reuse on other pages.
 
+About empty areas and responsive layout
+- If you see empty space (white margins) on the sides of the page on desktop, this is intentional: the site centers content inside a maximum width so it remains readable on large screens.
+- On narrow screens (phones / small tablets), the layout changes: grid columns collapse to a single column, and horizontal whitespace should disappear. Vertical whitespace (space between sections/cards) remains to keep content legible.
+- If you want content to take the full width on mobile, you can adjust `--max-width` in `assets/css/style.css` or change the `container` width settings.
+
 Git & Deploy
 - See the git-steps.md for instructions on how to commit and deploy to GitHub Pages.
