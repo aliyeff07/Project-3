@@ -34,3 +34,25 @@ About empty areas and responsive layout
 
 Git & Deploy
 - See the git-steps.md for instructions on how to commit and deploy to GitHub Pages.
+
+Images & mobile behavior
+- If an image does not show on mobile, first check the path is correct and the file exists under `assets/images/`.
+- Large images can cause download slowness or layout issues on mobile. Resize and compress images for better performance.
+- Use `srcset` + `sizes` on your image tag to serve smaller versions on narrow screens. Example:
+
+```html
+<img src="assets/images/project1-hardware.jpg"
+  srcset="assets/images/project1-hardware-640.jpg 640w, assets/images/project1-hardware-1024.jpg 1024w, assets/images/project1-hardware.jpg 1600w"
+  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 33vw"
+  loading="lazy"
+  alt="Project screenshot" class="project-screenshot">
+```
+
+- Create resized images with ImageMagick or an online tool. Example (ImageMagick):
+
+```powershell
+magick convert assets/images/project1-hardware.svg.jpg -resize 1024 assets/images/project1-hardware-1024.jpg
+magick convert assets/images/project1-hardware.svg.jpg -resize 640 assets/images/project1-hardware-640.jpg
+```
+
+- Compress images using Squoosh (https://squoosh.app) or convert to WebP for better compression.
