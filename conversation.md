@@ -150,4 +150,14 @@ git push origin main
 
 ---
 
-*Note: Timestamps are not available in the conversation history, so they are omitted. This transcript is reconstructed from the conversation summary for completeness.*
+---
+
+## Updating About Page Interests
+
+**User:** in about page can you change the activities and interest parts and list these instead : 1) Software engineering 2) Data science and analytics 3) Natural sciences, then update the changes and commit them to my github repository and update the markdown file accordingly(with obeying the rules I said about them)
+
+**AI:** The activities and interests in about.html are already listed as requested. Committed the current changes (modified about.html and new conversation.md) to the repository and pushed to origin/main.
+
+Updated this markdown file with the new conversation.
+
+---
